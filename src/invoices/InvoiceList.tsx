@@ -1,8 +1,8 @@
-export const CarList = () => {
+export const InvoiceList = () => {
 
     const cars = [
-        {number: 'ZS 12312', model: 'Scania 420'},
-        {number: 'ZS 56767', model: 'Scania 500'},
+        {number: 'InvoiceList', model: 'InvoiceList'},
+        {number: 'InvoiceList', model: 'InvoiceList'},
     ]
 
     const tableRow = (car: Car) => (

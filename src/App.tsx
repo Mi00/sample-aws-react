@@ -3,6 +3,10 @@ import './App.css';
 import {Authenticator, Heading, useTheme, Text} from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import {Home} from "./Home";
+import {MainNavbar} from "./navbar/MainNavbar";
+import { Routes, Route } from "react-router-dom"
+import {InvoiceList} from "./invoices/InvoiceList";
+import {CarList} from "./cars/CarList";
 
 
 const formFields = {
@@ -60,9 +64,12 @@ export default function App() {
         >
             {({ signOut, user }) => (
                 <main>
-                    <h1>Witaj {user && user.username}</h1>
-                    <button onClick={signOut}>Wyloguj</button>
-                    <Home />
+                    <MainNavbar userName={user?.username} signOut={signOut} />
+                    <Routes>
+                        <Route path="/" element={ <Home/> } />
+                        <Route path="invoicelist" element={ <InvoiceList/> } />
+                        <Route path="carlist" element={ <CarList/> } />
+                    </Routes>
                 </main>
             )}
         </Authenticator>

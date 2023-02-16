@@ -1,4 +1,5 @@
 import {CarList} from "./cars/CarList";
+import {MainNavbar} from "./navbar/MainNavbar";
 
 export const Home = () => {
     return (
